@@ -1,0 +1,57 @@
+<div class="container">
+    <main>
+        <div class="login-box">
+            <div class="lb-header">
+                <a href="#" class="active" id="login-box-link">Login</a>
+                <a href="#" id="signup-box-link">Sign Up</a>
+            </div>
+            <div class="social-login">
+                <a href="/auth/facebook">
+                    <i class="fab fa-facebook fa-lg"></i>
+                    with facebook
+                </a>
+                <a href="/auth/google">
+                    <i class="fab fa-google-plus fa-lg"></i>
+                    with Google
+                </a>
+            </div>
+            <form id "login" class="email-login" name="login" method="POST" action="auth/local">
+
+                <div class="u-form-group">
+                    <input type="email" placeholder="Email" />
+                </div>
+                <div class="u-form-group">
+                    <input type="password" placeholder="Password" />
+                </div>
+                <div class="u-form-group">
+                    <button>Log in</button>
+                </div>
+                <div class="u-form-group">
+                    <a href="#" class="forgot-password">Forgot password?</a>
+                </div>
+            </form>
+            <form id="signup" class="email-signup" method="POST" action="/users/register" name="singup">
+
+                <div class="u-form-group">
+                    <input type="text" placeholder="Firstname" name="firstname" />
+                </div>
+                <div class="u-form-group">
+                    <input type="text" placeholder="Lastname" name="lastname" />
+                </div>
+
+                <div class="u-form-group">
+                    <input type="email" placeholder="Email" name="email" />
+                </div>
+                <div class="u-form-group">
+                    <input type="password" placeholder="Password" name="password" />
+                </div>
+                <div class="u-form-group">
+                    <input type="password" placeholder="Confirm Password" name="passwordconfirm" />
+                </div>
+                <div class="u-form-group">
+                    <button>Sign Up</button>
+                </div>
+            </form>
+        </div>
+    </main>
+</div>
