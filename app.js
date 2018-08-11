@@ -34,7 +34,7 @@ app.use(
     secret: keys.session.secret,
     resave: false,
     saveUninitialized: true,
-    cookie: { httpOnly: true, maxAge: 2419200000 }
+    cookie: { httpOnly: true, maxAge: 24 * 60 * 60 * 1000 }
   })
 );
 
@@ -42,7 +42,7 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 app.use("/", indexRouter);
-app.use("/login", usersRouter);
+app.use("/users", usersRouter);
 app.use("/auth", authRouter);
 
 // catch 404 and forward to error handler

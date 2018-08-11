@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 const jwt = require("jsonwebtoken");
 const bcrypt = require("bcryptjs");
-const SECRET = "kowama123456";
+const keys = require("./../config/keys");
 
 //users schema
 const userSchema = new mongoose.Schema({
@@ -75,7 +75,10 @@ userSchema.methods.generateAuthToken = function() {
   let user = this;
 
   let access = "auth";
-  let token = jwt.sign({ _id: user._id.toHexString(), access }, SECRET);
+  let token = jwt.sign(
+    { _id: user._id.toHexString(), access },
+    keys.bcrypt.secret
+  );
 
   user.tokens = [...user.tokens, ...[{ access, token }]];
 

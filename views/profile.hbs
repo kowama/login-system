@@ -1,22 +1,25 @@
 <div class="container">
-    <h1>Profile/</h1>
+    <h1>Profile/{{user.firstname}}</h1>
     <h2>Welcome to member area</h2>
+    <a class="log-bnt right" href="/users/logout">logout</a>
     <div class="user">
-        {user}
-    </div>
-    <ul>
-        <li>
-            <b>Profile : </b> {user.profilePicture}
-        </li>
-        <li>
-            <b>Firstname : </b> {user.firstname}
-        </li>
-        <li>
-            <b>Lastname : </b> {user.lastname}
-        </li>
-        <li>
-            <b>Email: </b> {user.email}
-        </li>
+        {{user}}
+        <ul>
+            <li>
+                <b>Profile : </b>
+                <br>
+                <img src="{{user.profilePicture}}" alt="" srcset="">
+            </li>
+            <li>
+                <b>Firstname : </b> {{user.firstname}}
+            </li>
+            <li>
+                <b>Lastname : </b> {{user.lastname}}
+            </li>
+            <li>
+                <b>Email: </b> {{user.email}}
+            </li>
 
-    </ul>
+        </ul>
+    </div>
 </div>

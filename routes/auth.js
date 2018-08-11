@@ -1,7 +1,7 @@
 const router = require("express").Router();
 const passport = require("passport");
 
-router.get("/login", function(req, res, next) {
+router.get("/login", (req, res, next) => {
   res.render("login.hbs", {
     title: "login page"
   });
@@ -38,16 +38,13 @@ router.get(
   passport.authenticate("google", { failureRedirect: "/login" }),
   function(req, res) {
     // Successful authentication, redirect home.
-    res.render("profile");
+    //res.render("profile", { user: req.user });
+    res.redirect("/users/profile");
   }
 );
 
 router.get("/facebook", (req, res, next) => {
   res.render("profile");
-});
-
-router.get("/logout", (req, res, next) => {
-  res.redirect("/");
 });
 
 module.exports = router;
